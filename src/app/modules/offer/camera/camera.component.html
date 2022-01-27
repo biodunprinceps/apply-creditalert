@@ -1,0 +1,33 @@
+
+  <h2 class="w-3/4 text-xl font-light">To verify your identity we need to run a recognition check which will be compared with your passport photograph.</h2>
+  <div class="mt-10">
+    <div *ngIf="!showCamera" class="mb-8 flex space-x-5">
+      <div class="rounded-full opacity-30 transition duration-500 ease-in-out bg-princeps h-7 w-7 bg-main-color"></div>
+      <div>
+        <div class="text-princeps text-2xl font-light">Ensure Great Capture Position</div>
+        <div class="text-lg w-2/3">Make sure you are in a well lit area and both ears are uncovered</div>
+      </div>
+    </div>
+    <div *ngIf="!showCamera" class="mb-8 flex space-x-5">
+      <div class="rounded-full opacity-30 transition duration-500 ease-in-out bg-princeps h-7 w-7 bg-main-color"></div>
+      <div>
+        <div class="text-princeps text-2xl font-light">Look Straight at the Camera Lens</div>
+        <div class="text-lg w-2/3">While capturing the image ensure you position your eyes directly at the camera.</div>
+      </div>
+    </div>
+    <div *ngIf="showCamera" class="mb-8 relative">
+      <app-cameratrigger  (getPicture)="handleImage($event)"></app-cameratrigger>
+      <div *ngIf="webcamImage" class="absolute top-0 left-0 -z-10">
+        <img [src]="webcamImage.imageAsDataUrl" style="width: 15.625rem;" />
+      </div>
+    </div>
+
+    <button *ngIf="!showCamera"  (click)="showCameraView()" style="font-size: 14px;" class="px-40 text-white py-3 rounded-lg bg-princeps">START CAMERA</button>
+    <div class="flex space-x-5 justify-center">
+      <button *ngIf="showCamera" (click)="showCameraView()" style="font-size: 14px;" class="px-20 text-white py-3 rounded-lg bg-princeps">CANCEL</button>
+    <button *ngIf="showCamera" (click)="saveImage()" style="font-size: 14px;" class="px-20 text-white py-3 rounded-lg bg-princeps">SUBMIT</button>
+    </div>
+
+  </div>
+
+

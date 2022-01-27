@@ -1,0 +1,59 @@
+<aside style="background: transparent linear-gradient(153deg, #F58420 0%, #AE7F6A 46%, #2076FF 100%) 0% 0% no-repeat padding-box;"  class="text-white fixed items-center md:h-full h-12 md:pt-10 md:px-5 md:rounded-r-xl md:w-20 w-full">
+  <ul class="flex md:block space-x-10 md:space-x-0 items-center px-3 md:px-0">
+    <!-- profile pic  -->
+    <li class="md:mt-8 md:mb-16" *ngIf="loggedIn">
+      <a href="#">
+        <img  class="md:h-100 md:w-100 rounded-circle" src="{{ photo }}" alt="">
+        <!-- <img  class="md:h-100 md:w-100 w-8 rounded-full" src="https://blydenukem.files.wordpress.com/2014/01/itoro-passport-fixed.jpg" alt=""> -->
+      </a>
+    </li>
+
+    <!-- Home  -->
+    <li class="md:my-12" *ngIf="loggedIn">
+      <a routerLink="/dashboard">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 md:w-9" width="33.023" height="31.9" viewBox="0 0 41.023 31.9">
+          <path id="Icon_awesome-home" data-name="Icon awesome-home" d="M19.966,10.529,6.837,21.343V33.015a1.139,1.139,0,0,0,1.139,1.139l7.98-.021a1.139,1.139,0,0,0,1.134-1.139V26.178a1.139,1.139,0,0,1,1.139-1.139h4.558a1.139,1.139,0,0,1,1.139,1.139v6.811a1.139,1.139,0,0,0,1.139,1.143l7.977.022a1.139,1.139,0,0,0,1.139-1.139V21.335L21.056,10.529A.868.868,0,0,0,19.966,10.529Zm20.74,7.35-5.954-4.907V3.108a.855.855,0,0,0-.855-.855H29.91a.855.855,0,0,0-.855.855V8.279L22.68,3.033a3.418,3.418,0,0,0-4.344,0L.309,17.879a.855.855,0,0,0-.114,1.2l1.816,2.208a.855.855,0,0,0,1.2.116L19.966,7.61a.868.868,0,0,1,1.09,0l16.752,13.8a.855.855,0,0,0,1.2-.114l1.816-2.208a.855.855,0,0,0-.121-1.206Z" transform="translate(0.001 -2.254)" fill="currentColor"/>
+        </svg>
+      </a>
+    </li>
+
+    <!-- customer service  -->
+    <li class="md:my-12">
+      <a href="#">
+        <svg id="customer-service-headset-svgrepo-com" xmlns="http://www.w3.org/2000/svg" class="w-5 md:w-9" width="35.229" height="33.269" viewBox="0 0 40.229 38.269">
+          <g id="Layer_5_47_" transform="translate(0 0)">
+            <path id="Path_1482" data-name="Path 1482" d="M36.888,21.957H35.437c-.4,0-.41-.26-.424-.389A14.316,14.316,0,0,0,20.8,8.791H19.431a14.317,14.317,0,0,0-14.2,12.617c-.021.182-.032.548-.367.548H3.341c-1,0-3.341,1.054-3.341,6.378v2.794c0,3.949,2.339,4.859,3.341,4.859H8.2a1.827,1.827,0,0,0,1.822-1.822V23.778A1.827,1.827,0,0,0,8.2,21.957s-.229-.02-.17-.427a11.561,11.561,0,0,1,11.4-9.952H20.8a11.528,11.528,0,0,1,11.388,9.838c.026.179.124.542-.154.542a1.827,1.827,0,0,0-1.822,1.822V34.167a1.827,1.827,0,0,0,1.822,1.822h.912c.251,0,.208.2.186.3-.743,3.355-2.411,7.16-6.155,7.16H24.2a.429.429,0,0,1-.407-.306,2.645,2.645,0,0,0-2.322-1.378H18.916a2.647,2.647,0,1,0,0,5.294h2.555a2.646,2.646,0,0,0,2.341-1.411c.039-.073.071-.226.37-.226h2.792c2.543,0,5.947-1.264,7.718-7.285.189-.642.342-1.281.467-1.9a.253.253,0,0,1,.293-.253h1.437c1,0,3.341-.911,3.341-4.859V28.335C40.228,23.087,37.89,21.957,36.888,21.957Z" transform="translate(0 -8.791)" fill="#fff"/>
+          </g>
+        </svg>
+
+      </a>
+    </li>
+
+    <!-- Key  -->
+    <li class="md:my-12" *ngIf="loggedIn">
+      <a href="#" routerLink="/dashboard/change-password">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 md:w-9" width="35.229" height="38.269" viewBox="0 0 11.499 5.75">
+          <path id="Icon_ionic-md-key" data-name="Icon ionic-md-key" d="M8.937,12.678a3.03,3.03,0,0,0-2.77-1.99,2.813,2.813,0,0,0-2.792,2.875,2.86,2.86,0,0,0,2.847,2.875,2.955,2.955,0,0,0,2.714-1.99h2.842v1.769h1.91V14.447h1.186V12.678Zm-2.7,1.838a.954.954,0,1,1,.954-.954A.956.956,0,0,1,6.239,14.516Z" transform="translate(-3.375 -10.688)" fill="currentColor"/>
+        </svg>
+      </a>
+    </li>
+
+
+    <div class="md:bottom-0 md:right-6 -bottom-0 right-0 absolute" *ngIf="loggedIn">
+      <button (click)="logout()">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-10" width="44" height="44" viewBox="0 0 48 48">
+            <g id="Layer_2" data-name="Layer 2" transform="translate(0.001 -0.324)" opacity="0.4">
+              <g id="log-out" transform="translate(0 0.324)">
+                <rect id="Rectangle_119" data-name="Rectangle 119" width="48" height="48" transform="translate(48 0) rotate(90)" fill="#201b1b" opacity="0"/>
+                <path id="Path_1494" data-name="Path 1494" d="M10.036,8.024a2.012,2.012,0,0,0,0-4.024H6.012A2.012,2.012,0,0,0,4,6.012V34.18a2.012,2.012,0,0,0,2.012,2.012h4.024a2.012,2.012,0,1,0,0-4.024H8.024V8.024Z" transform="translate(4.048 3.76)" fill="#fff"/>
+                <path id="Path_1495" data-name="Path 1495" d="M32.782,15.895,27.108,7.847a2.013,2.013,0,1,0-3.28,2.334l3.461,4.869H11.012a2.012,2.012,0,1,0,0,4.024h16.1L23.486,23.9a2.012,2.012,0,0,0,3.219,2.414l6.036-8.048a2.012,2.012,0,0,0,.04-2.374Z" transform="translate(9.108 6.794)" fill="#fff"/>
+              </g>
+            </g>
+          </svg>
+        </span>
+      </button>
+      <!-- <div *ngIf="logoutTooltip" class="absolute left-10 bg-black text-white text-xs top-2 py-1 rounded-md px-4">Log Out</div> -->
+    </div>
+  </ul>
+</aside>

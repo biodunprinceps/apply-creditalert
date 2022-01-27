@@ -1,0 +1,13 @@
+<div class="h-64 rounded-full" style="width: 250px;">
+  <div *ngIf="isCameraExist" class="h-full w-full rounded-lg">
+    <webcam [height]="800" [width]="800" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+            *ngIf="showWebcam" [switchCamera]="nextWebcamObservable"></webcam>
+  </div>
+</div>
+
+<!-- <button (click)="takeSnapshot()" style="font-size: 20px;" class="px-12 text-white py-4 rounded-lg bg-main-color">CAPTURE IMAGE</button> -->
+
+<div class="flex space-x-4">
+  <button (click)="takeSnapshot()" style="font-size: 13px;" class="px-12 text-white py-2 rounded-lg bg-princeps">CAPTURE IMAGE</button>
+  <button (click)="onOffWebCame()" style="font-size: 13px;" class="px-12 text-white py-2 rounded-lg bg-princeps">RETAKE</button>
+</div>

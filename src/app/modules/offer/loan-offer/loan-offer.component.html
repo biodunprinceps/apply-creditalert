@@ -1,0 +1,55 @@
+<!-- offer card  -->
+<div class="mb-6 relative h-56 w-96">
+  <div *ngIf="skeleton_loader" class="absolute z-10">
+    <ngx-skeleton-loader [theme]="{ height: '14rem',width: '30rem', marginTop: '0rem', backgroundColor:'lightgrey', marginLeft : '-8px',borderRadius: '10px'}"></ngx-skeleton-loader>
+  </div>
+  <div class="absolute text-white ml-9 flex flex-col h-full w-full justify-center items-center ">
+    <div class="text-6xl">
+      {{ loan_amount | currency:'₦' }}
+    </div>
+  </div>
+
+  <div class="absolute text-white ml-9 flex flex-col h-full w-full justify-center items-center mt-9">
+    <form action="" class="w-full">
+      <!-- <input type="range" class="w-full mt-16" name="range"  id="range"> -->
+      <div class="w-full mt-8">
+        <ngx-slider title="Kindly use arrows on keyboard to adjust accurately" (userChangeEnd)="reCalcRepayment($event)" [(value)]="loan_amount" [options]="options"></ngx-slider>
+      </div>
+
+    </form>
+  </div>
+  <svg id="Group_184" data-name="Group 184" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="470.303" height="234.906" viewBox="0 0 525.303 234.906">
+    <defs>
+      <linearGradient id="linear-gradient" x1="1.066" y1="-0.021" x2="-0.188" y2="0.983" gradientUnits="objectBoundingBox">
+        <stop offset="0" stop-color="#f58420"/>
+        <stop offset="0.346" stop-color="#ae7f6a"/>
+        <stop offset="1" stop-color="#2076ff"/>
+      </linearGradient>
+    </defs>
+    <rect id="_Downloader.la_-61bb100050965" data-name="[Downloader.la]-61bb100050965" width="525.303" height="233.577" rx="17" transform="translate(0 1.329)" opacity="0.73" fill="url(#linear-gradient)"/>
+    <path id="_Downloader.la_-61bb100050965-2" data-name="[Downloader.la]-61bb100050965" d="M17,0H508.3a17,17,0,0,1,17,17V180.783a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V17A17,17,0,0,1,17,0Z" transform="translate(0 0)" opacity="0.79" fill="url(#linear-gradient)"/>
+  </svg>
+</div>
+
+<!-- repayment details -->
+<div *ngIf="skeleton_loader" class="absolute z-10">
+  <ngx-skeleton-loader [theme]="{ height: '5rem',width: '30rem', marginTop: '0rem', backgroundColor:'lightgrey', marginLeft : '-8px',borderRadius: '10px'}"></ngx-skeleton-loader>
+</div>
+<div class="h-20 rounded-md w-3/4 mb-12 px-8 flex justify-center space-x-8 py-4 text-center items-center" style="background: #E4E4E4 0% 0% no-repeat padding-box;">
+  <!-- left  -->
+  <div>
+    <div class="text-xs">REPAYMENT AMOUNT</div>
+    <div  class="text-princeps font-bold text-2xl">{{ repayment_amount | currency:'₦' }}</div>
+  </div>
+
+  <!-- right  -->
+  <div>
+    <div class="text-xs">REPAYMENT DATE</div>
+    <div class="text-princeps font-bold text-2xl">{{ repayment_date | date:'MMM d, y' }}</div>
+  </div>
+</div>
+
+<!-- button  -->
+  <button (click)="goToCamera()" class="bg-princeps w-3/4 px-32 py-3 mb-5 rounded-md text-white">SELECT LOAN OFFER</button>
+
+<p class="text-center w-3/4 mt-5 text-xs font-light opacity-50">The Loan Offering are based on your existing borrowable amount based on your profile, bank statement and your annual earnings.</p>
