@@ -35,21 +35,21 @@
 <div *ngIf="skeleton_loader" class="absolute z-10">
   <ngx-skeleton-loader [theme]="{ height: '5rem',width: '30rem', marginTop: '0rem', backgroundColor:'lightgrey', marginLeft : '-8px',borderRadius: '10px'}"></ngx-skeleton-loader>
 </div>
-<div class="h-20 rounded-md w-3/4 mb-12 px-8 flex justify-center space-x-8 py-4 text-center items-center" style="background: #E4E4E4 0% 0% no-repeat padding-box;">
+<div class="h-20 rounded-md w-3/4 mb-12 flex justify-center space-x-8 text-center items-center" style="background: #E4E4E4 0% 0% no-repeat padding-box;">
   <!-- left  -->
-  <div>
+  <div class="w-full">
     <div class="text-xs">REPAYMENT AMOUNT</div>
     <div  class="text-princeps font-bold text-2xl">{{ repayment_amount | currency:'₦' }}</div>
   </div>
 
   <!-- right  -->
-  <div>
+  <div class="w-full">
     <div class="text-xs">REPAYMENT DATE</div>
     <div class="text-princeps font-bold text-2xl">{{ repayment_date | date:'MMM d, y' }}</div>
   </div>
 </div>
 
 <!-- button  -->
-  <button (click)="goToCamera()" class="bg-princeps w-3/4 px-32 py-3 mb-5 rounded-md text-white">SELECT LOAN OFFER</button>
+  <button (click)="goToCamera()" class="bg-princeps w-3/4 py-3 mb-5 rounded-md text-white">SELECT LOAN OFFER</button>
 
 <p class="text-center w-3/4 mt-5 text-xs font-light opacity-50">The Loan Offering are based on your existing borrowable amount based on your profile, bank statement and your annual earnings.</p>

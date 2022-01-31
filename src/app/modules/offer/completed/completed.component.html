@@ -1,4 +1,4 @@
-<div class="mt-28">
+<div class="mt-28 container mx-auto">
   <svg xmlns="http://www.w3.org/2000/svg" width="150.98" height="145.874" class="mb-10 mx-auto ml-44" viewBox="0 0 205.98 195.874">
     <g id="verified-text-paper-svgrepo-com" transform="translate(0 0)">
       <g id="Group_108" data-name="Group 108" transform="translate(0 0)">
@@ -17,6 +17,7 @@
 
   <div class="text-md font-light mb-12 w-7/12 text-center mx-20">You have successfully applied for a loan. We would send you a Log On for your dashboard</div>
 
-  <button routerLink="/login" style="font-size: 14px;" class="px-32 text-white py-3 rounded-lg bg-princeps mx-20">RETURN TO LOGIN</button>
+  <button *ngIf="!loggedIn" routerLink="/login" style="font-size: 14px;" class="px-32 text-white py-3 rounded-lg bg-princeps mx-20">RETURN TO LOGIN</button>
+  <button *ngIf="loggedIn" routerLink="/dashboard" style="font-size: 14px;" class="px-32 text-white py-3 rounded-lg bg-princeps mx-20">RETURN TO DASHBOARD</button>
 
 </div>

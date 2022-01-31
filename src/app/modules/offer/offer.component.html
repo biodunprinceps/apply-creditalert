@@ -1,10 +1,10 @@
-<div class="h-full md:flex md:space-x-32">
+<div class="container mx-auto h-full md:flex md:space-x-32">
 
   <!-- side nav  -->
   <app-sidenav></app-sidenav>
 
   <!-- main  -->
-  <main class="w-full">
+  <main class="container mx-auto w-full">
     <!-- logo  -->
     <div class="flex space-x-5 items-center mt-20 float-right mr-48">
       <svg id="Group_191" data-name="Group 191" xmlns="http://www.w3.org/2000/svg" width="48.606" height="48.526" viewBox="0 0 66.606 62.526">
@@ -33,15 +33,15 @@
     </div>
 
     <!-- content  -->
-    <div class="md:mt-32 py-16 md:px-16 w-full md:flex">
+    <div class="container mx-auto md:mt-32 py-16 md:px-16 w-full md:flex">
       <!-- left  -->
-      <div class="w-1/2">
+      <div class="w-1/2 container mx-auto">
         <h1 class="text-4xl text-princeps font-semibold mb-5">Loan Offer</h1>
         <p class="text-2xl text-princeps font-semibold mb-12">{{ email }}</p>
 
         <p class="text-lg w-3/4 mb-8 font-light" style="color: #201B1B;">Your loan information is provided below</p>
         <!-- form  -->
-        <div>
+        <div class="container mx-auto">
           <form autocomplete="off">
             <div class="mb-4">
                 <div class="flex relative w-8/12">
@@ -99,7 +99,7 @@
       </div>
 
       <!-- right  -->
-      <div class="w-1/2">
+      <div class="w-1/2 container mx-auto">
         <!-- stepper  -->
         <app-stepper></app-stepper>
         <!-- dynamic start  -->

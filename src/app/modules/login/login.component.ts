@@ -38,7 +38,9 @@ export class LoginComponent implements OnInit {
 
       err=>{
         const errMessage = err.error.message
-        this.toastr.error(errMessage);
+        this.toastr.error(errMessage, '', {
+          enableHtml: true
+        });
         this.loadingbar.stop();
         this.spinner = !this.spinner;
         console.log(err)

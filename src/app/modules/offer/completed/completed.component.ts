@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-completed',
@@ -8,13 +9,17 @@ import { Router } from '@angular/router';
 })
 export class CompletedComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authservice:AuthService) { }
 
   ngOnInit(): void {
   }
 
   complete(){
     this.router.navigateByUrl('offer/completed');
+  }
+
+  loggedIn(){
+    return this.authservice.token;
   }
 
 }

@@ -22,10 +22,10 @@
       </div>
     </div>
 
-    <button *ngIf="!showCamera"  (click)="showCameraView()" style="font-size: 14px;" class="px-40 text-white py-3 rounded-lg bg-princeps">START CAMERA</button>
+    <button *ngIf="!showCamera"  (click)="showCameraView()" style="font-size: 14px;" class="w-3/4 text-white py-3 rounded-lg bg-princeps">START CAMERA</button>
     <div class="flex space-x-5 justify-center">
-      <button *ngIf="showCamera" (click)="showCameraView()" style="font-size: 14px;" class="px-20 text-white py-3 rounded-lg bg-princeps">CANCEL</button>
-    <button *ngIf="showCamera" (click)="saveImage()" style="font-size: 14px;" class="px-20 text-white py-3 rounded-lg bg-princeps">SUBMIT</button>
+      <button *ngIf="showCamera" (click)="showCameraView()" style="font-size: 14px;" class="w-1/2 text-white py-3 rounded-lg bg-princeps">CANCEL</button>
+    <button *ngIf="showCamera" (click)="saveImage()" style="font-size: 14px;" class="w-1/2 text-white py-3 rounded-lg bg-princeps">SUBMIT</button>
     </div>
 
   </div>
