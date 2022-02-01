@@ -19,7 +19,8 @@ export class LoanOfferComponent implements OnInit {
   // value: number = this.loan_amount;
   options: Options = {
     floor: 1000,
-    ceil: 0
+    ceil: 0,
+    step: 1000
   };
 
   constructor(private router: Router, private applyservice:ApplyService, private loadingbar: LoadingBarService) { }
@@ -57,6 +58,7 @@ export class LoanOfferComponent implements OnInit {
   }
 
   reCalcRepayment(evt:ChangeContext): void {
+    this.profit = 0.15 * parseInt(this.loan_amount);
     this.repayment_amount = this.profit + evt.value
   }
 }

@@ -12,7 +12,6 @@ import { LoanOfferComponent } from './loan-offer/loan-offer.component';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { CompletedComponent } from './completed/completed.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { CameraTriggerComponent } from './components/camera/cameratrigger.component';
 import { MobilenavComponent } from './components/mobilenav/mobilenav.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
@@ -27,7 +26,6 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     StepperComponent,
     CompletedComponent,
     SidenavComponent,
-    DashboardComponent,
     MobilenavComponent,
     ChangePasswordComponent,
   ],
