@@ -33,6 +33,7 @@ export class LoanOfferComponent implements OnInit {
 
   goToCamera(){
     localStorage.setItem('loan_amount',this.loan_amount);
+    localStorage.setItem('status', '1');
     this.router.navigateByUrl('offer/facial-recognition');
   }
 
@@ -47,7 +48,7 @@ export class LoanOfferComponent implements OnInit {
         this.options = {...this.options, ceil: this.loan_amount};
         this.profit = 0.15 * parseInt(this.loan_amount) ;
         this.repayment_amount = this.profit + parseInt(this.loan_amount);
-        this.repayment_date = res.data.collection_date
+        this.repayment_date = res.data.due_date
         this.skeleton_loader = false;
       },
 

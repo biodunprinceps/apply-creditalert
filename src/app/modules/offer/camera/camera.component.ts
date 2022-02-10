@@ -74,7 +74,7 @@ export class CameraComponent implements OnInit {
         this.toastr.success("Loan Application Successfull");
         this.router.navigateByUrl('offer/completed');
         if(!this.tokenservice.get()){
-          localStorage.removeItem('id');
+          localStorage.clear();
         }
         this.loadingbar.stop();
 

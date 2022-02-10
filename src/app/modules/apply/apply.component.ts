@@ -20,6 +20,7 @@ export class ApplyComponent implements OnInit {
   phone!: string;
   bankname: string = "000";
   accountnumber!: string;
+  referral_code!: string;
   applyDetails = {}
   id! : any;
   password!: any
@@ -45,12 +46,14 @@ export class ApplyComponent implements OnInit {
       email: this.email,
       telephone: this.phone,
       bankcode: this.bankname,
-      accountnumber: this.accountnumber
+      accountnumber: this.accountnumber,
+      referral_code: this.referral_code
   }
     return this.applyservice.getOffer(this.applyDetails).subscribe(
       res => {
         this.id = res.id;
         localStorage.setItem('id',this.id);
+        localStorage.setItem('status','0'); //not accepted loan amount
         this.toastr.success("Loan Application Successful")
         this.router.navigateByUrl('offer');
       },

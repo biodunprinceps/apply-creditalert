@@ -16,6 +16,7 @@ export class CompletedComponent implements OnInit {
 
   complete(){
     this.router.navigateByUrl('offer/completed');
+    
   }
 
   loggedIn(){
