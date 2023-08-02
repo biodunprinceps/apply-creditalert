@@ -13,6 +13,7 @@ export class CameraTriggerComponent implements OnInit {
   @Output() getPicture = new EventEmitter<WebcamImage>();
   showWebcam = true;
   isCameraExist = true;
+  showRetake = false;
 
   errors: WebcamInitError[] = [];
 
@@ -31,10 +32,12 @@ export class CameraTriggerComponent implements OnInit {
 
   takeSnapshot(): void {
     this.trigger.next();
+    this.showRetake = true;
   }
 
-  onOffWebCame() {
+  onOffWebCam() {
     this.showWebcam = !this.showWebcam;
+    this.showRetake = !this.showRetake
   }
 
   handleInitError(error: WebcamInitError) {

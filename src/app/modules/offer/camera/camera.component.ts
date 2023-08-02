@@ -17,6 +17,7 @@ export class CameraComponent implements OnInit {
   showCamera: boolean = false
   id:any
   loan_amount!:any;
+  // showRetake = false;
   constructor(private router: Router, private applyservice: ApplyService, private toastr: ToastrService, private tokenservice:TokenService, private loadingbar: LoadingBarService) { }
 
   ngOnInit(): void {
@@ -27,6 +28,10 @@ export class CameraComponent implements OnInit {
 
   saveImage(){
     this.loadingbar.start();
+    if(!this.webcamImage){
+      this.toastr.error("Kindly take a snapshot");
+      this.loadingbar.stop();
+    }
     // const id = localStorage.getItem('id') as string;
     const img = this.webcamImage?.imageAsDataUrl as string;
     const formData = new FormData();
@@ -68,6 +73,10 @@ export class CameraComponent implements OnInit {
     const data = {
       id: this.id,
       loan_amount: this.loan_amount
+    }
+    if(!this.webcamImage){
+      this.toastr.error("Kindly take a snapshot");
+      this.loadingbar.stop();
     }
     return this.applyservice.submitApplication(data).subscribe(
       res => {

@@ -46,7 +46,11 @@ export class LoanOfferComponent implements OnInit {
       res => {
         this.loan_amount = res.data.loan_amount;
         this.options = {...this.options, ceil: this.loan_amount};
+        let today = new Date();
         this.profit = 0.15 * parseInt(this.loan_amount) ;
+        if(today.getDate() > 15){
+          this.profit = 0.25 * parseInt(this.loan_amount);
+        }
         this.repayment_amount = this.profit + parseInt(this.loan_amount);
         this.repayment_date = res.data.due_date
         this.skeleton_loader = false;
@@ -59,7 +63,11 @@ export class LoanOfferComponent implements OnInit {
   }
 
   reCalcRepayment(evt:ChangeContext): void {
+    let today = new Date();
     this.profit = 0.15 * parseInt(this.loan_amount);
+    if(today.getDate() > 15){
+      this.profit = 0.25 * parseInt(this.loan_amount);
+    }
     this.repayment_amount = this.profit + evt.value
   }
 }

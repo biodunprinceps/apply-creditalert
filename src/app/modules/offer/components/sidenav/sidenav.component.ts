@@ -19,10 +19,6 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
     this.processLogin()
-    if(this.loggedIn){
-      this.loadPic();
-    }
-
   }
 
   processLogin(){

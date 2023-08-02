@@ -9,5 +9,5 @@
 
 <div class="flex space-x-4">
   <button (click)="takeSnapshot()" style="font-size: 13px;" class="px-12 text-white py-2 rounded-lg bg-princeps">CAPTURE IMAGE</button>
-  <button (click)="onOffWebCame()" style="font-size: 13px;" class="px-12 text-white py-2 rounded-lg bg-princeps">RETAKE</button>
+  <button *ngIf="showRetake"  (click)="onOffWebCam()" style="font-size: 13px;" class="px-12 text-white py-2 rounded-lg bg-princeps">RETAKE</button>
 </div>
